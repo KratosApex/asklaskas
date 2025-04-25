@@ -1,0 +1,34 @@
+{
+  "BOT_TOKEN": "",
+  "CLIENT_ID": "1178011058405916762",
+  "GUILD_ID": "1365383197180952657",
+  "DB_HOST": "localhost",
+  "DB_USER": "root",
+  "DB_PASSWORD": "",
+  "DB_NAME": "bfh-sp",
+  "ROLES": {
+    "REMOVE_AFTER_WL": "1365383573238190202",
+    "ADMIN": "1365383740523806832",
+    "STAFF": "1365383865379721267",
+    "WELCOME": "1365383573238190202",
+    "WHITELIST": "1365383636198883449"
+  },
+  "TICKET_CATEGORY_ID": "1365383960666050660",
+  "WELCOME_CHANNEL_ID": "1365384074444935219",
+  "SUGGESTION_CHANNEL_ID": "1365384112478621837",
+  "TICKET_LOGS_CHANNEL_ID": "1365384253550100584",
+  "BACKUP_CHANNEL_ID": "1365384340585844819",
+  "LOGS": {
+    "WEBHOOK_URL": "https://discord.com/api/webhooks/1365386411561189546/tTJw0UTvVsbEKqMaiIcNpG6nooMeH5xnfV9OBg6GUlSj82TbM0JnI1Cf4oLD5CaXpV1B"
+  },
+  "HOST_FIVEM": "212.18.114.233",
+  "PORT_FIVEM": "30120",
+  "CFX_CODE": "537rpz",
+  "CONNECT_DOMAIN": "teste.five-m.city",
+  "SOCIAL": {
+    "CFX": "https://cfx.re/join/537rpz",
+    "INSTAGRAM": "https://www.instagram.com/brasilfivemhost",
+    "TIKTOK": "https://www.tiktok.com/@kratosplays1",
+    "DISCORD": "https://discord.gg/ZseFeAW4"
+  }
+}
