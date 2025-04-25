@@ -174,7 +174,10 @@ async function startBot() {
                 CFX_CODE: "",
                 CONNECT_DOMAIN: "",
                 ROLES: {},
-                LOGS: {},
+                LOGS: {
+                    "WEBHOOK_URL": "",
+                    "MYWHITELIST": ""
+                },
                 SOCIAL: {}
             };
 
