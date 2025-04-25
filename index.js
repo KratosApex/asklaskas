@@ -83,6 +83,24 @@ async function startBot() {
                         client.logger.log('info', `Interação de botão ${interaction.customId} por ${userId}`);
                     }
                 }
+                
+                // Novo código para o botão de whitelist
+                if (interaction.customId === 'whitelist_button') {
+                    const setupWlCommand = client.commands.get('setupwl');
+                    if (setupWlCommand && setupWlCommand.handleButton) {
+                        await setupWlCommand.handleButton(interaction, client);
+                    }
+                }
+            }
+            
+            // Novo código para lidar com submissões de modal
+            if (interaction.isModalSubmit()) {
+                if (interaction.customId === 'whitelist_modal') {
+                    const setupWlCommand = client.commands.get('setupwl');
+                    if (setupWlCommand && setupWlCommand.handleModal) {
+                        await setupWlCommand.handleModal(interaction, client);
+                    }
+                }
             }
         } catch (error) {
             console.error('Erro ao processar interação:', error);
