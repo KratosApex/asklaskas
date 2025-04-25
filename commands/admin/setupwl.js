@@ -35,6 +35,7 @@ module.exports = {
                     { name: 'Requisitos', value: 'Você deve fornecer seu ID, nome completo e informar como conheceu nosso servidor.' }
                 )
                 .setFooter({ text: 'Após a aprovação, você receberá o cargo de Whitelist automaticamente.' })
+                .setFooter({ text: `${interaction.guild.name}`, iconURL: interaction.guild.iconURL({ dynamic: true }) })
                 .setTimestamp();
 
             // Criar botão para whitelist

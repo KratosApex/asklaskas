@@ -11,7 +11,10 @@ module.exports = {
         .setColor(0x0099FF)
         .setTitle('Redes Sociais')
         .setDescription('Confira nossas redes sociais e fique por dentro de todas as novidades!')
+        .setImage('https://usagif.com/wp-content/uploads/2021/4fh5wi/bemvindo-15.gif')
+        .setFooter({ text: `${interaction.guild.name}`, iconURL: interaction.guild.iconURL({ dynamic: true }) })
         .setTimestamp();
+        
       
       const row = new ActionRowBuilder();
       

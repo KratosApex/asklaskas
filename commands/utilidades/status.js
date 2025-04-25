@@ -49,6 +49,7 @@ module.exports = {
                             .setImage('https://i.imgur.com/eYcJFjk.png')
                             .setFooter({ text: `Última atualização: ${new Date().toLocaleString()}` })
                             .setTimestamp();
+                            
 
                         if (editReply) {
                             await interaction.editReply({ embeds: [embedOffline] });

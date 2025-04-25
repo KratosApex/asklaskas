@@ -25,6 +25,7 @@ module.exports = {
                     { name: 'Latência do WebSocket', value: `${client.ws.ping}ms`, inline: true }
                 )
                 .setFooter({ text: 'Brasil fivem Host ✅' })
+                .setFooter({ text: `${interaction.guild.name}`, iconURL: interaction.guild.iconURL({ dynamic: true }) })
                 .setTimestamp();
             
             // Editar a resposta com o embed

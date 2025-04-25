@@ -25,6 +25,7 @@ module.exports = {
             { name: '🚨 Denúncias', value: 'Para denunciar jogadores que estão quebrando as regras', inline: true }
           )
           .setFooter({ text: 'Seu ticket será atendido assim que possível.' });
+          
 
         const row = new ActionRowBuilder()
           .addComponents(

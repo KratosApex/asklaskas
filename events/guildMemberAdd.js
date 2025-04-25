@@ -26,7 +26,7 @@ module.exports = {
           { name: 'ID', value: `${member.id}`, inline: true },
           { name: 'Entrou em', value: `<t:${Math.floor(member.joinedTimestamp / 1000)}:F>`, inline: true }
         )
-        .setImage('https://i.imgur.com/sua_imagem_de_boas_vindas.png')
+        .setImage('https://usagif.com/wp-content/uploads/2021/4fh5wi/bemvindo-15.gif')
         .setFooter({ text: `Agora temos ${member.guild.memberCount} membros!` })
         .setTimestamp();
       
