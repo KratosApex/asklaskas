@@ -1,0 +1,28 @@
+{
+    "name": "discord-fivem-bot",
+    "version": "1.0.0",
+    "description": "Bot Discord com slash commands para integração com servidor FiveM",
+    "main": "index.js",
+    "scripts": {
+        "start": "node index.js",
+        "dev": "nodemon index.js"
+    },
+    "keywords": [
+        "discord",
+        "bot",
+        "fivem",
+        "integration"
+    ],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "discord.js": "^14.11.0",
+        "mysql2": "^3.3.0",
+        "mysqldump": "^3.2.0",
+        "node-cron": "^3.0.2",
+        "node-fetch": "^2.6.9"
+    },
+    "devDependencies": {
+        "nodemon": "^2.0.22"
+    }
+}
