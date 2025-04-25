@@ -175,8 +175,7 @@ async function startBot() {
                 CONNECT_DOMAIN: "",
                 ROLES: {},
                 LOGS: {
-                    "WEBHOOK_URL": "",
-                    "MYWHITELIST": ""
+                    "WEBHOOK_URL": ""
                 },
                 SOCIAL: {}
             };

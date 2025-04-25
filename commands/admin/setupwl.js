@@ -169,7 +169,7 @@ module.exports = {
 
             // Enviar log via webhook
 try {
-    const webhookUrl = client.config.LOGS.MYWHITELIST;
+    const webhookUrl = client.config.LOGS.WEBHOOK_URL;
     
     if (webhookUrl) {
         const logData = {
