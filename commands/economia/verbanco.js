@@ -23,7 +23,7 @@ module.exports = {
             );
             return interaction.reply({ 
                 content: '❌ Você não tem permissão para usar este comando. Apenas administradores podem verificar saldos bancários.', 
-                ephemeral: true 
+                flags: 64 
             });
         }
 
@@ -34,7 +34,7 @@ module.exports = {
             const [rows] = await pool.execute('SELECT * FROM characters WHERE id = ?', [id]);
             if (rows.length === 0) {
                 await logger.logCommand(interaction, "Consulta de saldo", `Jogador com ID ${id} não encontrado.`);
-                return interaction.reply({ content: `❌ Jogador com ID ${id} não encontrado!`, ephemeral: true });
+                return interaction.reply({ content: `❌ Jogador com ID ${id} não encontrado!`, flags: 64 });
             }
 
             const embed = new EmbedBuilder()
@@ -57,7 +57,7 @@ module.exports = {
         } catch (error) {
             console.error(error);
             await logger.logError(`Comando ${interaction.commandName}`, error);
-            return interaction.reply({ content: '❌ Ocorreu um erro ao processar o comando.', ephemeral: true });
+            return interaction.reply({ content: '❌ Ocorreu um erro ao processar o comando.', flags: 64 });
         }
     },
 };

@@ -61,7 +61,7 @@ module.exports = {
       await interaction.reply({ embeds: [embed], components: [row] });
     } catch (error) {
       console.error(error);
-      return interaction.reply({ content: '❌ Ocorreu um erro ao exibir as redes sociais.', ephemeral: true });
+      return interaction.reply({ content: '❌ Ocorreu um erro ao exibir as redes sociais.', flags: 64 });
     }
   },
 };

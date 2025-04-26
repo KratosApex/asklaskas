@@ -28,7 +28,7 @@ module.exports = {
       
       return interaction.reply({ 
         content: `✅ ${deletedMessages.size} mensagens foram apagadas.`, 
-        ephemeral: true 
+        flags: 64 
       });
     } catch (error) {
       console.error(error);
@@ -37,14 +37,14 @@ module.exports = {
       if (error.code === 50034) {
         return interaction.reply({ 
           content: '❌ Não é possível excluir mensagens com mais de 14 dias.', 
-          ephemeral: true 
+          flags: 64 
         });
       }
       
       await logger.logError(`Comando ${interaction.commandName}`, error);
       return interaction.reply({ 
         content: '❌ Ocorreu um erro ao tentar apagar as mensagens.', 
-        ephemeral: true 
+        flags: 64 
       });
     }
   },

@@ -5,16 +5,16 @@ module.exports = {
     .setName('config')
     .setDescription('Configura o bot através de uma interface interativa')
     .setDefaultMemberPermissions(PermissionFlagsBits.Administrator),
-  
+
   async execute(interaction, client) {
     // Verificar se é o dono do servidor
     if (interaction.guild.ownerId !== interaction.user.id) {
-      return interaction.reply({ 
-        content: '❌ Apenas o dono do servidor pode acessar as configurações do bot.', 
-        ephemeral: true 
+      return interaction.reply({
+        content: '❌ Apenas o dono do servidor pode acessar as configurações do bot.',
+        flags: 64
       });
     }
-    
+
     // Mostrar menu principal de configuração
     await showMainConfigMenu(interaction, client);
   },
@@ -33,10 +33,11 @@ async function showMainConfigMenu(interaction, client) {
       { name: '📢 Canais', value: 'Configurações de canais do Discord', inline: true },
       { name: '👑 Cargos', value: 'Configurações de cargos', inline: true },
       { name: '📊 Logs', value: 'Configurações de logs', inline: true },
-      { name: '🌐 Redes Sociais', value: 'Links para redes sociais', inline: true }
+      { name: '🌐 Redes Sociais', value: 'Links para redes sociais', inline: true },
+      { name: '🔐 AutoRole', value: 'Configurações do sistema de autorole', inline: true }
     )
     .setFooter({ text: 'Configuração interativa do bot' });
-  
+
   // Dividir os botões em 3 linhas para melhor organização
   const row1 = new ActionRowBuilder()
     .addComponents(
@@ -56,7 +57,7 @@ async function showMainConfigMenu(interaction, client) {
         .setEmoji('🎮')
         .setStyle(ButtonStyle.Primary)
     );
-  
+
   const row2 = new ActionRowBuilder()
     .addComponents(
       new ButtonBuilder()
@@ -75,7 +76,7 @@ async function showMainConfigMenu(interaction, client) {
         .setEmoji('📊')
         .setStyle(ButtonStyle.Secondary)
     );
-  
+
   const row3 = new ActionRowBuilder()
     .addComponents(
       new ButtonBuilder()
@@ -84,16 +85,21 @@ async function showMainConfigMenu(interaction, client) {
         .setEmoji('🌐')
         .setStyle(ButtonStyle.Success),
       new ButtonBuilder()
+        .setCustomId('config_autorole')
+        .setLabel('AutoRole')
+        .setEmoji('🔐')
+        .setStyle(ButtonStyle.Success),
+      new ButtonBuilder()
         .setCustomId('config_save')
         .setLabel('Salvar Configurações')
         .setEmoji('💾')
         .setStyle(ButtonStyle.Danger)
     );
-  
-  await interaction.reply({ 
-    embeds: [embed], 
+
+  await interaction.reply({
+    embeds: [embed],
     components: [row1, row2, row3],
-    ephemeral: true
+    flags: 64
   });
 }
 

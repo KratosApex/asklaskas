@@ -16,7 +16,7 @@ module.exports = {
     .setDefaultMemberPermissions(PermissionFlagsBits.Administrator),
   
   async execute(interaction, client) {
-    await interaction.deferReply();
+    await interaction.followUp();
     
     const cargo = interaction.options.getRole('cargo');
     const limparApelidos = interaction.options.getBoolean('apelidos') || false;

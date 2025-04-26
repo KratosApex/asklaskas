@@ -18,7 +18,7 @@ module.exports = {
         if (!interaction.member.permissions.has(PermissionFlagsBits.Administrator)) {
             return interaction.reply({ 
                 content: '❌ Você não tem permissão para usar este comando.', 
-                ephemeral: true 
+                flags: 64 
             });
         }
 
@@ -59,14 +59,14 @@ module.exports = {
 
             return interaction.reply({ 
                 content: `✅ Sistema de whitelist configurado com sucesso no canal ${channel}!`, 
-                ephemeral: true 
+                flags: 64 
             });
         } catch (error) {
             console.error(error);
             await logger.logError(`Comando ${interaction.commandName}`, error);
             return interaction.reply({ 
                 content: '❌ Ocorreu um erro ao configurar o sistema de whitelist.', 
-                ephemeral: true 
+                flags: 64 
             });
         }
     },
@@ -127,7 +127,7 @@ module.exports = {
     // Handler para o modal de whitelist
     async handleModal(interaction, client) {
         try {
-            await interaction.deferReply({ ephemeral: true });
+            await interaction.deferReply({ flags: 64 });
 
             // Obter valores do modal
             const id = interaction.fields.getTextInputValue('id_input');
@@ -139,7 +139,7 @@ module.exports = {
             if (rows.length === 0) {
                 return interaction.editReply({ 
                     content: `❌ ID ${id} não encontrado no banco de dados! Verifique se digitou corretamente.`, 
-                    ephemeral: true 
+                    flags: 64 
                 });
             }
 
@@ -147,7 +147,7 @@ module.exports = {
             if (rows[0].whitelist === 1) {
                 return interaction.editReply({ 
                     content: `❌ Este ID já possui whitelist ativa!`, 
-                    ephemeral: true 
+                    flags: 64 
                 });
             }
 
@@ -198,14 +198,14 @@ try {
 
             return interaction.editReply({ 
                 content: `✅ Whitelist aprovada com sucesso! Você já pode acessar a cidade.`, 
-                ephemeral: true 
+                flags: 64 
             });
         } catch (error) {
             console.error(error);
             await logger.logError('Whitelist Modal', error);
             return interaction.editReply({ 
                 content: '❌ Ocorreu um erro ao processar sua solicitação de whitelist.', 
-                ephemeral: true 
+                flags: 64 
             });
         }
     }

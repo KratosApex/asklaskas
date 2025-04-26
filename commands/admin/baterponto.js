@@ -52,7 +52,7 @@ module.exports = {
       if (ultimoPonto && !ultimoPonto.saida) {
         return interaction.reply({ 
           content: `❌ Você já está em serviço desde <t:${Math.floor(ultimoPonto.entrada / 1000)}:F>. Use \`/baterponto sair\` para encerrar.`, 
-          ephemeral: true 
+          flags: 64 
         });
       }
       
@@ -88,7 +88,7 @@ module.exports = {
       if (!ultimoPonto || ultimoPonto.saida) {
         return interaction.reply({ 
           content: `❌ Você não está em serviço. Use \`/baterponto entrar\` para iniciar.`, 
-          ephemeral: true 
+          flags: 64 
         });
       }
       
@@ -131,7 +131,7 @@ module.exports = {
         if (!isAdmin) {
           return interaction.reply({ 
             content: `❌ Você não tem permissão para ver o relatório de outros usuários.`, 
-            ephemeral: true 
+            flags: 64 
           });
         }
       }
@@ -150,7 +150,7 @@ module.exports = {
       if (targetPontoData.pontos.length === 0) {
         return interaction.reply({ 
           content: `Não há registros de ponto para ${targetUser.id === interaction.user.id ? 'você' : targetUser.username}.`, 
-          ephemeral: true 
+          flags: 64 
         });
       }
       

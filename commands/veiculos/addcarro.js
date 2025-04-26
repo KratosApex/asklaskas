@@ -35,7 +35,7 @@ module.exports = {
           "Falha ao adicionar veículo", 
           `Jogador com ID ${id} não encontrado.`
         );
-        return interaction.reply({ content: `❌ Jogador com ID ${id} não encontrado!`, ephemeral: true });
+        return interaction.reply({ content: `❌ Jogador com ID ${id} não encontrado!`, flags: 64 });
       }
 
       // Verificar se o jogador já possui este veículo
@@ -47,7 +47,7 @@ module.exports = {
           "Falha ao adicionar veículo", 
           `Jogador com ID ${id} já possui o veículo ${veiculo}.`
         );
-        return interaction.reply({ content: `❌ O jogador já possui um veículo ${veiculo} em sua garagem!`, ephemeral: true });
+        return interaction.reply({ content: `❌ O jogador já possui um veículo ${veiculo} em sua garagem!`, flags: 64 });
       }
 
       // Adicionar o veículo
@@ -66,11 +66,11 @@ module.exports = {
         `ID: ${id}\nVeículo: ${veiculo}\nPlaca: ${placa}`
       );
       
-      return interaction.reply({ content: `✅ Veículo ${veiculo} adicionado com sucesso à garagem do jogador ${id} com a placa ${placa}!`, ephemeral: true });
+      return interaction.reply({ content: `✅ Veículo ${veiculo} adicionado com sucesso à garagem do jogador ${id} com a placa ${placa}!`, flags: 64 });
     } catch (error) {
       console.error(error);
       await logger.logError(`Comando ${interaction.commandName}`, error);
-      return interaction.reply({ content: '❌ Ocorreu um erro ao processar o comando.', ephemeral: true });
+      return interaction.reply({ content: '❌ Ocorreu um erro ao processar o comando.', flags: 64 });
     }
   },
 };

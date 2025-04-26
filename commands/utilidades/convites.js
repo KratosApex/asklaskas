@@ -57,7 +57,7 @@ module.exports = {
             console.error(error);
             await interaction.reply({ 
                 content: '❌ Ocorreu um erro ao verificar os convites.', 
-                ephemeral: true 
+                flags: 64 
             });
         }
     },

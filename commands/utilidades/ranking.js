@@ -21,7 +21,7 @@ module.exports = {
 
     async execute(interaction, client) {
         try {
-            await interaction.deferReply();
+            await interaction.followUp();
             
             const subcommand = interaction.options.getSubcommand();
             

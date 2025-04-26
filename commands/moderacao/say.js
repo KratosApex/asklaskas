@@ -30,14 +30,14 @@ module.exports = {
       
       return interaction.reply({ 
         content: `✅ Mensagem enviada com sucesso em <#${canal.id}>.`, 
-        ephemeral: true 
+        flags: 64 
       });
     } catch (error) {
       console.error(error);
       await logger.logError(`Comando ${interaction.commandName}`, error);
       return interaction.reply({ 
         content: '❌ Ocorreu um erro ao enviar a mensagem.', 
-        ephemeral: true 
+        flags: 64 
       });
     }
   },

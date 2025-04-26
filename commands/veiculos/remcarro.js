@@ -30,7 +30,7 @@ module.exports = {
           "Falha ao remover veículo", 
           `Jogador com ID ${id} não possui o veículo ${veiculo}.`
         );
-        return interaction.reply({ content: `❌ O jogador não possui um veículo ${veiculo} em sua garagem!`, ephemeral: true });
+        return interaction.reply({ content: `❌ O jogador não possui um veículo ${veiculo} em sua garagem!`, flags: 64 });
       }
 
       // Remover o veículo
@@ -42,11 +42,11 @@ module.exports = {
         `ID: ${id}\nVeículo: ${veiculo}\nPlaca: ${vehicleRows[0].plate}`
       );
       
-      return interaction.reply({ content: `✅ Veículo ${veiculo} removido com sucesso da garagem do jogador ${id}!`, ephemeral: true });
+      return interaction.reply({ content: `✅ Veículo ${veiculo} removido com sucesso da garagem do jogador ${id}!`, flags: 64 });
     } catch (error) {
       console.error(error);
       await logger.logError(`Comando ${interaction.commandName}`, error);
-      return interaction.reply({ content: '❌ Ocorreu um erro ao processar o comando.', ephemeral: true });
+      return interaction.reply({ content: '❌ Ocorreu um erro ao processar o comando.', flags: 64 });
     }
   },
 };

@@ -8,7 +8,7 @@ module.exports = {
     async execute(interaction, client) {
         try {
             // Enviar uma resposta inicial
-            await interaction.deferReply();
+            await interaction.followUp();
             
             // Obter o timestamp da resposta
             const reply = await interaction.fetchReply();

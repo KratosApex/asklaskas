@@ -26,7 +26,7 @@ module.exports = {
       
       if (rows.length === 0) {
         await logger.logCommand(interaction, "Falha ao remover gemas", `Jogador com ID ${id} não encontrado.`);
-        return interaction.reply({ content: `❌ Jogador com ID ${id} não encontrado!`, ephemeral: true });
+        return interaction.reply({ content: `❌ Jogador com ID ${id} não encontrado!`, flags: 64 });
       }
 
       // Verificar se tem saldo suficiente
@@ -36,7 +36,7 @@ module.exports = {
           "Falha ao remover gemas", 
           `Jogador com ID ${id} não possui saldo suficiente. Saldo: $${rows[0].gems}, Valor solicitado: $${valor}`
         );
-        return interaction.reply({ content: `❌ O jogador não possui saldo suficiente! Saldo atual: $${rows[0].gems}`, ephemeral: true });
+        return interaction.reply({ content: `❌ O jogador não possui saldo suficiente! Saldo atual: $${rows[0].gems}`, flags: 64 });
       }
 
       // Atualizar o saldo bancário
@@ -50,11 +50,11 @@ module.exports = {
         `ID: ${id}\nValor: $${valor}\nSaldo anterior: $${rows[0].gems}\nNovo saldo: $${novoSaldo}`
       );
       
-      return interaction.reply({ content: `✅ Removido $${valor} Gemas do jogador ${id}. Novo saldo: $${novoSaldo}`, ephemeral: true });
+      return interaction.reply({ content: `✅ Removido $${valor} Gemas do jogador ${id}. Novo saldo: $${novoSaldo}`, flags: 64 });
     } catch (error) {
       console.error(error);
       await logger.logError(`Comando ${interaction.commandName}`, error);
-      return interaction.reply({ content: '❌ Ocorreu um erro ao processar o comando.', ephemeral: true });
+      return interaction.reply({ content: '❌ Ocorreu um erro ao processar o comando.', flags: 64 });
     }
   },
 };

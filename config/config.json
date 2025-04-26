@@ -1,5 +1,5 @@
 {
-  "BOT_TOKEN": "MTE3ODAxMTA1ODQwNTkxNjc2Mg.GXqdyt.Edqyig8iniolcwDM-2sEHv7zcCQ6tL5kct6Mxs",
+  "BOT_TOKEN": "MTE3ODAxMTA1ODQwNTkxNjc2Mg.Gc276f.jxReBZBvPGt5sgGgs0KyoV0jO-DWfFmuJs_0Fs",
   "CLIENT_ID": "1178011058405916762",
   "GUILD_ID": "1365383197180952657",
   "DB_HOST": "localhost",
@@ -19,7 +19,8 @@
   "TICKET_LOGS_CHANNEL_ID": "1365384253550100584",
   "BACKUP_CHANNEL_ID": "1365384340585844819",
   "LOGS": {
-    "WEBHOOK_URL": "https://discord.com/api/webhooks/1365386411561189546/tTJw0UTvVsbEKqMaiIcNpG6nooMeH5xnfV9OBg6GUlSj82TbM0JnI1Cf4oLD5CaXpV1B"
+    "WEBHOOK_URL": "https://discord.com/api/webhooks/1365386411561189546/tTJw0UTvVsbEKqMaiIcNpG6nooMeH5xnfV9OBg6GUlSj82TbM0JnI1Cf4oLD5CaXpV1B",
+    "WEBHOOK_URL2": "https://discord.com/api/webhooks/1365386411561189546/tTJw0UTvVsbEKqMaiIcNpG6nooMeH5xnfV9OBg6GUlSj82TbM0JnI1Cf4oLD5CaXpV1B"
   },
   "HOST_FIVEM": "212.18.114.233",
   "PORT_FIVEM": "30120",
@@ -30,5 +31,12 @@
     "INSTAGRAM": "https://www.instagram.com/brasilfivemhost",
     "TIKTOK": "https://www.tiktok.com/@kratosplays1",
     "DISCORD": "https://discord.gg/ZseFeAW4"
+  },
+  "roleSystem": {
+    "type": "verification",
+    "verificationChannel": "1365668915455197224",
+    "verificationMessage": "Clique no botão abaixo para verificar sua conta e obter acesso ao servidor.",
+    "verificationButtonLabel": "Verificar",
+    "verificationButtonEmoji": "✅"
   }
 }

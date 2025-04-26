@@ -85,7 +85,7 @@ module.exports = {
     } catch (error) {
       console.error(error);
       await logger.logError(`Comando ${interaction.commandName}`, error);
-      return interaction.reply({ content: '❌ Ocorreu um erro ao processar o comando.', ephemeral: true });
+      return interaction.reply({ content: '❌ Ocorreu um erro ao processar o comando.', flags: 64 });
     }
   },
 };

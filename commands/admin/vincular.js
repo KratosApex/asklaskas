@@ -30,7 +30,7 @@ module.exports = {
           "Falha ao vincular usuário", 
           `ID ${id} não encontrado no banco de dados.`
         );
-        return interaction.reply({ content: `❌ ID ${id} não encontrado no banco de dados!`, ephemeral: true });
+        return interaction.reply({ content: `❌ ID ${id} não encontrado no banco de dados!`, flags: 64 });
       }
       
       // Atualizar discord ID na tabela accounts
@@ -67,7 +67,7 @@ module.exports = {
     } catch (error) {
       console.error(error);
       await logger.logError(`Comando ${interaction.commandName}`, error);
-      return interaction.reply({ content: '❌ Ocorreu um erro ao vincular o usuário.', ephemeral: true });
+      return interaction.reply({ content: '❌ Ocorreu um erro ao vincular o usuário.', flags: 64 });
     }
   },
 };

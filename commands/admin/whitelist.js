@@ -37,7 +37,7 @@ module.exports = {
             "Falha ao aprovar whitelist", 
             `ID ${id} não encontrado no banco de dados.`
           );
-          return interaction.reply({ content: `❌ ID ${id} não encontrado no banco de dados!`, ephemeral: true });
+          return interaction.reply({ content: `❌ ID ${id} não encontrado no banco de dados!`, flags: 64 });
         }
         
         // Atualizar whitelist e vincular Discord
@@ -75,7 +75,7 @@ module.exports = {
       } catch (error) {
         console.error(error);
         await logger.logError(`Comando ${interaction.commandName}`, error);
-        return interaction.reply({ content: '❌ Ocorreu um erro ao processar o comando.', ephemeral: true });
+        return interaction.reply({ content: '❌ Ocorreu um erro ao processar o comando.', flags: 64 });
       }
     } else if (subcommand === 'remover') {
       const user = interaction.options.getUser('usuario');
@@ -110,7 +110,7 @@ module.exports = {
       } catch (error) {
         console.error(error);
         await logger.logError(`Comando ${interaction.commandName}`, error);
-        return interaction.reply({ content: '❌ Ocorreu um erro ao processar o comando.', ephemeral: true });
+        return interaction.reply({ content: '❌ Ocorreu um erro ao processar o comando.', flags: 64 });
       }
     }
   },

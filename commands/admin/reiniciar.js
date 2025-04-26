@@ -21,7 +21,7 @@ module.exports = {
             );
             return interaction.reply({ 
                 content: '❌ Você não tem permissão para reiniciar o bot.', 
-                ephemeral: true 
+                flags: 64 
             });
         }
 
@@ -34,12 +34,13 @@ module.exports = {
         if (cooldowns.has(userId) && !privilegedUsers.includes(userId)) {
             return interaction.reply({ 
                 content: '⏳ Você precisa aguardar 10 minutos entre reinicializações do bot.', 
-                ephemeral: true 
+                flags: 64 
             });
         }
 
         try {
-            await interaction.reply({ content: '🔄 Reiniciando o bot... Voltarei em alguns segundos!', ephemeral: false });
+           await interaction.reply({ content: '🔄 Reiniciando o bot... Voltarei em alguns segundos!', flags: 0 });
+
             
             await logger.logCommand(
                 interaction,
@@ -58,7 +59,7 @@ module.exports = {
             }
 
             // Obter o nome do processo PM2 (geralmente é o nome do arquivo principal, como "index")
-            const processName = 'index'; // Ajuste conforme o nome do seu processo no PM2
+            const processName = 'bot-lua'; // Ajuste conforme o nome do seu processo no PM2
             
             // Executar o comando PM2 para reiniciar
             exec(`pm2 restart ${processName}`, (error, stdout, stderr) => {
@@ -78,7 +79,7 @@ module.exports = {
             
             return interaction.reply({ 
                 content: '❌ Ocorreu um erro ao tentar reiniciar o bot.', 
-                ephemeral: true 
+                flags: 64 
             });
         }
     },

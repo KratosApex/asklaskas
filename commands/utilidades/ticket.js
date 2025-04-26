@@ -61,7 +61,7 @@ module.exports = {
       } catch (error) {
         console.error(error);
         await logger.logError(`Comando ${interaction.commandName}`, error);
-        return interaction.reply({ content: '❌ Ocorreu um erro ao criar o painel de tickets.', ephemeral: true });
+        return interaction.reply({ content: '❌ Ocorreu um erro ao criar o painel de tickets.', flags: 64 });
       }
     }
   },
